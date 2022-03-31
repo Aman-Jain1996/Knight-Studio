@@ -1,0 +1,99 @@
+.home-heading {
+  text-align: center;
+  margin: 2.4rem;
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+
+.home-heading span {
+  color: var(--primary);
+  font-family: "Nunito sans", cursive;
+  font-weight: 700;
+}
+
+.home-hero-shop-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.6rem;
+}
+
+.home-hero-button {
+  width: 30rem;
+  height: 6rem;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  align-items: center;
+  margin: 0 1.6rem 5.4rem;
+}
+
+.home-hero-button:hover .btn-bg {
+  width: 30rem;
+}
+
+.home-hero-button:hover .arrow {
+  transform: translateX(3rem);
+}
+
+.btn-bg {
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--primary);
+  border-radius: 7rem;
+  position: absolute;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.btn-text {
+  font-size: 3rem;
+  color: black;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-hero-button:hover .btn-text {
+  font-weight: 500;
+}
+
+.shopNow {
+  color: #2d97c6;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrowline {
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  transform-origin: right;
+  transition: width 0.3s ease-in-out;
+}
+
+.arrowline-1 {
+  width: 3rem;
+  transform: translateX(-7px);
+}
+
+.arrowline-2 {
+  width: 1.5rem;
+  transform: rotate(40deg);
+}
+
+.arrowline-3 {
+  width: 1.5rem;
+  transform: rotate(-40deg);
+}
+
+.home-banner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 2.4rem 0;
+}

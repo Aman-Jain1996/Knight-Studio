@@ -1,0 +1,85 @@
+.navbar-container {
+  padding: 1.6rem 3.6rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-white);
+  min-height: 10vh;
+  width: 100%;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+}
+
+.nav-left-container {
+  display: flex;
+  width: 50%;
+}
+
+.nav-logo {
+  font-weight: 800;
+  font-size: 3rem;
+  font-family: "Dancing Script", cursive;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.nav-left-pill-container {
+  margin-left: 4.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  gap: 1.6rem;
+}
+
+.nav-pills {
+  font-family: "Nunito Sans", cursive;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-pills:hover {
+  color: var(--primary-Light);
+  transform: scale(1.1);
+}
+
+.nav-right-container {
+  display: flex;
+  margin-left: auto;
+}
+
+.searchbar {
+  position: absolute;
+  left: 60%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  width: 30%;
+  border: 1px solid var(--text-grey);
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: var(--bg-darkWhite);
+}
+
+.searchbar > .icon {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.searchbar > input {
+  font-size: 1.4rem;
+  padding: 0 1.2rem;
+  border: none;
+  width: 100%;
+  outline: none;
+  color: var(--text-Dark);
+  font-weight: 500;
+  font-size: 1.2rem;
+  background-color: var(--bg-darkWhite);
+  cursor: initial;
+}
