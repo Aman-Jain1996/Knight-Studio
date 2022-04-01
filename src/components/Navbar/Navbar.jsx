@@ -16,7 +16,9 @@ function Navbar() {
             <div className="nav-pills">
               <Link to="/explore">Explore</Link>
             </div>
-            <div className="nav-pills">Playlists</div>
+            <div className="nav-pills">
+              <Link to="">Playlists</Link>
+            </div>
           </div>
         </div>
 

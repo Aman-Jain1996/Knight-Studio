@@ -1,0 +1,17 @@
+.navpill-container {
+  margin: 2.4rem 4.8rem 0;
+  padding: 1.6rem 0;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.navpill {
+  padding: 6px 12px;
+  border: 2px solid var(--primary);
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  /* color: var(--bg-white); */
+  font-weight: 600;
+  /* background-color: var(--primary); */
+  cursor: pointer;
+}
