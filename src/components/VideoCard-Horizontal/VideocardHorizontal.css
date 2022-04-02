@@ -1,0 +1,51 @@
+.videocard-horizontal-container {
+  display: flex;
+  width: 60rem;
+  background-color: var(--primary-Light-2);
+  border-radius: 4px;
+  position: relative;
+}
+
+.videocard-horizontal-image {
+  width: 20rem;
+  margin: 1.2rem;
+}
+
+.videocard-horizontal-content {
+  padding: 2rem 1.2rem;
+}
+
+.content-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.content-desc {
+  font-size: 1.1rem;
+  color: var(--text-greyDark);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.timestamp {
+  display: flex;
+  gap: 6px;
+  margin-top: 2.4rem;
+}
+
+.card-actionContainer {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+}
+
+.card-actionContainer .icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.card-actionContainer .icon:hover {
+  transform: scale(1.1);
+  color: var(--primary);
+}

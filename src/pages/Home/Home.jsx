@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import banner1 from "../../assets/Kashmir-Files.jpg";
-import banner2 from "../../assets/Rudra.webp";
-import banner3 from "../../assets/The-Witcher.jpg";
 import Carousel from "../../components/Carousel/Carousel";
 import Homebanner from "../../components/Home-Banner/Homebanner";
 import "./Home.css";
@@ -32,19 +29,19 @@ function Home() {
 
       <div className="home-banner-container">
         <Homebanner
-          imageUrl={banner1}
+          imageUrl="https://res.cloudinary.com/ajain8479/image/upload/v1648884662/Kashmir-Files_oymxyf.jpg"
           heading="Best of Indian Cinema"
           content="Enjoy best of indian movies at one stop."
           reversed="true"
         />
         <Homebanner
-          imageUrl={banner3}
+          imageUrl="https://res.cloudinary.com/ajain8479/image/upload/v1648884661/The-Witcher_quvkob.jpg"
           heading="Best of English Web Series"
           content="Enjoy best hollywood web series seanlessly."
           reversed="false"
         />
         <Homebanner
-          imageUrl={banner2}
+          imageUrl="https://res.cloudinary.com/ajain8479/image/upload/v1648884661/Rudra_dytwer.webp"
           heading="Best of Indian Web Series"
           content="Enjoy best of indian web series on th go."
           reversed="true"
