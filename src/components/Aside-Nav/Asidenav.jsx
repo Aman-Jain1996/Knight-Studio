@@ -51,7 +51,7 @@ function Asidenav() {
           <span className="content-container">Watch Later</span>
         </div>
       </Link>
-      <Link to="">
+      <Link to="/history">
         <div className="icon-content-container">
           <span className="logo-container">
             <HistoryIcon className="icon" />
