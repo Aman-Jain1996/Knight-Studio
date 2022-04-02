@@ -12,6 +12,7 @@
   position: sticky;
   top: 8rem;
   bottom: 0px;
+  overflow-y: auto;
 }
 
 .icon-content-container:hover {

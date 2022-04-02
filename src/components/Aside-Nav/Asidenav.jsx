@@ -43,7 +43,7 @@ function Asidenav() {
           <span className="content-container">Liked</span>
         </div>
       </Link>
-      <Link to="">
+      <Link to="/later">
         <div className="icon-content-container">
           <span className="logo-container">
             <BookmarkIcon className="icon" />
