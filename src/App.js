@@ -1,8 +1,17 @@
 import Mockman from "mockman-js";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import { History, Home, Homescreen, Liked, Videos, WatchLater } from "./pages";
+import { Navbar } from "./components";
+
+import {
+  History,
+  Home,
+  Homescreen,
+  Liked,
+  Playlist,
+  Videos,
+  WatchLater,
+} from "./pages";
 
 function App() {
   return (
@@ -16,6 +25,7 @@ function App() {
           <Route path="liked" element={<Liked />} />
           <Route path="history" element={<History />} />
           <Route path="later" element={<WatchLater />} />
+          <Route path="playlists" element={<Playlist />} />
         </Route>
       </Routes>
     </>

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Homebanner.css";
 
-function Homebanner({ imageUrl, heading, content, reversed }) {
+export function Homebanner({ imageUrl, heading, content, reversed }) {
   return (
     <div
       style={{ backgroundColor: reversed !== "true" && "white" }}
@@ -26,5 +26,3 @@ function Homebanner({ imageUrl, heading, content, reversed }) {
     </div>
   );
 }
-
-export default Homebanner;

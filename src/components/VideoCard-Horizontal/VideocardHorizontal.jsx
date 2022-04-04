@@ -3,7 +3,7 @@ import "./VideocardHorizontal.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
-function VideocardHorizontal() {
+export function VideocardHorizontal() {
   const date = new Date();
   return (
     <div className="videocard-horizontal-container">
@@ -31,5 +31,3 @@ function VideocardHorizontal() {
     </div>
   );
 }
-
-export default VideocardHorizontal;

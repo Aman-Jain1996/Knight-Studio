@@ -8,7 +8,7 @@ import BookmarkIcon from "@mui/icons-material/Bookmark";
 import HistoryIcon from "@mui/icons-material/History";
 import { Link } from "react-router-dom";
 
-function Asidenav() {
+export function Asidenav() {
   return (
     <div className="asidenav-container">
       <Link to="/">
@@ -27,7 +27,7 @@ function Asidenav() {
           <span className="content-container">Explore</span>
         </div>
       </Link>
-      <Link to="">
+      <Link to="/playlists">
         <div className="icon-content-container">
           <span className="logo-container">
             <QueueIcon className="icon" />
@@ -62,5 +62,3 @@ function Asidenav() {
     </div>
   );
 }
-
-export default Asidenav;

@@ -1,5 +1,5 @@
 import React from "react";
-import VideocardHorizontal from "../../components/VideoCard-Horizontal/VideocardHorizontal";
+import { VideocardHorizontal } from "../../components";
 
 function WatchLater() {
   return (
