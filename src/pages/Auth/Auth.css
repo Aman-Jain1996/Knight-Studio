@@ -1,0 +1,156 @@
+.auth-main {
+  margin: 1.4rem 0;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  background-color: var(--bg-white);
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.4rem;
+  border-radius: 1rem;
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.7);
+}
+
+.auth-page-heading {
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+
+.auth-container .login {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  padding: 1.6rem;
+  padding-bottom: 0;
+}
+
+.field-container {
+  margin: 2.4rem 0 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.field {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.field-input {
+  height: 50px;
+  width: 100%;
+  font-size: 1.2rem;
+  border: 1px solid;
+  outline: none;
+  border-radius: 2px;
+  padding: 20px 16px 0 13px;
+}
+
+.field-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: top left;
+  padding: 16px 20px 0;
+  font-size: 1.4rem;
+  color: grey;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.field-input:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+.field-label-hover,
+.field-input:focus ~ .field-label {
+  transform: translateY(-15%) scale(0.8);
+  padding: 12px 0 0 15px;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.field-container > .field {
+  flex: 0 0 100%;
+}
+
+.btn-auth {
+  margin: 1.6rem 0;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--primary);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-auth:hover {
+  transform: none;
+  border: none;
+  background-color: var(--primary-Light);
+}
+
+label[for="remember"] {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.redirection {
+  font-size: 1.2rem;
+}
+
+.signUp {
+  text-decoration: underline;
+  color: var(--primary);
+  font-size: 1.4rem;
+  margin-left: 0.5rem;
+}
+
+.auth-container .signup-form {
+  padding: 0;
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.off,
+.on {
+  position: absolute;
+  cursor: pointer;
+  right: 0%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+}
+
+.guest-credentials {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.auth-field-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.auth-field-row > .field {
+  flex: 0 0 48%;
+  margin-bottom: 0;
+}
