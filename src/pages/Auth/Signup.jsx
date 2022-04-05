@@ -3,6 +3,7 @@ import "./Auth.css";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 const Signup = () => {
   const [eye, setEye] = useState(true);
@@ -14,6 +15,8 @@ const Signup = () => {
   const lNameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
+
+  const { signUpHandler } = useAuth();
 
   const changeHandler = (e) => {
     switch (e.target.name) {
@@ -65,7 +68,14 @@ const Signup = () => {
   return (
     <main className="auth-main">
       <div className="auth-container">
-        <form className="login signup-form" method="POST">
+        <form
+          className="login signup-form"
+          method="POST"
+          onSubmit={(e) => {
+            e.preventDefault();
+            signUpHandler(fName, lName, email, password);
+          }}
+        >
           <h2 className="auth-page-heading">SignUp</h2>
           <div className="field-container">
             <div className="auth-field-row">

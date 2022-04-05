@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Auth.css";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -10,6 +11,13 @@ const Login = () => {
   const [eye, setEye] = useState(true);
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  const { loginHandler, token } = useAuth();
+  const location = useLocation();
+
+  const redirectionPath = location.state?.path || "/explore";
+
+  useEffect(() => {});
 
   const changeHandler = (e) => {
     switch (e.target.name) {
@@ -43,7 +51,14 @@ const Login = () => {
   return (
     <main className="auth-main">
       <div className="auth-container">
-        <form className="login" method="POST">
+        <form
+          className="login"
+          method="POST"
+          onSubmit={(e) => {
+            e.preventDefault();
+            loginHandler(email, password, redirectionPath);
+          }}
+        >
           <h2 className="auth-page-heading">Login</h2>
           <div className="field-container">
             <div className="field">
@@ -105,7 +120,18 @@ const Login = () => {
           </Link>
         </p>
         <p className="redirection">
-          <Link to="/login" className="signUp guest-credentials">
+          <Link
+            to="/login"
+            onClick={(e) => {
+              e.preventDefault();
+              loginHandler(
+                "amanjain@gmail.com",
+                "amanjain1234",
+                redirectionPath
+              );
+            }}
+            className="signUp guest-credentials"
+          >
             Use guest credentials
           </Link>
         </p>

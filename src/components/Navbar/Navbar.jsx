@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Navbar.css";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 export function Navbar() {
   const location = useLocation();
+  const { user } = useAuth();
 
   return (
     <>
@@ -41,16 +43,25 @@ export function Navbar() {
         )}
 
         <div className="nav-right-container">
-          <Link to={location.pathname === "/login" ? "/signUp" : "/login"}>
+          {user ? (
             <div className="icon-content-container">
               <span className="logo-container">
                 <PersonIcon className="icon" />
               </span>
-              <span className="content-container">
-                {location.pathname === "/login" ? "SignUp" : "Login"}
-              </span>
+              <span className="content-container">Hi , {user.firstName}</span>
             </div>
-          </Link>
+          ) : (
+            <Link to={location.pathname === "/login" ? "/signUp" : "/login"}>
+              <div className="icon-content-container">
+                <span className="logo-container">
+                  <PersonIcon className="icon" />
+                </span>
+                <span className="content-container">
+                  {location.pathname === "/login" ? "SignUp" : "Login"}
+                </span>
+              </div>
+            </Link>
+          )}
         </div>
       </nav>
     </>
