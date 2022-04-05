@@ -5,7 +5,6 @@ import { LoginService, SignUpService } from "../Services";
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  console.log("auth render");
   const browserToken = localStorage.getItem("userToken");
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(browserToken?.token || null);

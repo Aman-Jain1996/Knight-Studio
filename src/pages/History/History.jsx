@@ -1,7 +1,9 @@
 import React from "react";
 import { VideocardHorizontal } from "../../components";
+import { useData } from "../../contexts";
 
 function History() {
+  const { state } = useData();
   return (
     <>
       <h2 className="page-heading">Watch History</h2>
@@ -14,13 +16,20 @@ function History() {
             />
           </div>
           <div className="liked-content">
-            <div className="counter-container">{2} Videos</div>
+            <div className="counter-container">
+              {state.history.length} Videos
+            </div>
           </div>
         </div>
-        <div className="liked-list">
-          <VideocardHorizontal />
-          <VideocardHorizontal />
-        </div>
+        {state.history.length === 0 ? (
+          <div className="no-item-content">Nothing in Watch History</div>
+        ) : (
+          <div className="liked-list">
+            {state.history.map((history) => (
+              <VideocardHorizontal key={history._id} cardData={history} />
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

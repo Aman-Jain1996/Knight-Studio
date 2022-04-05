@@ -1,19 +1,19 @@
 import React from "react";
 import { Videocard, NavpillContainer } from "../../components";
+import { useData } from "../../contexts";
 import "./Videos.css";
 
 function Videos() {
+  const { state } = useData();
   return (
-    <div>
+    <>
       <NavpillContainer />
       <div className="video-list-container">
-        <Videocard />
-        <Videocard />
-        <Videocard />
-        <Videocard />
-        <Videocard />
+        {state.videos.map((video) => (
+          <Videocard video={video} key={video._id} />
+        ))}
       </div>
-    </div>
+    </>
   );
 }
 

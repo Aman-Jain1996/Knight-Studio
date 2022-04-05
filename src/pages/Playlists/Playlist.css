@@ -29,9 +29,9 @@
   border-radius: 4px;
   font-size: 1.2rem;
   transition: all 0.3s ease-in-out;
+  font-weight: 500;
 }
 
 .create-playlist-button:hover {
   background-color: var(--primary);
-  font-weight: 500;
 }

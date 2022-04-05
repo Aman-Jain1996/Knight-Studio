@@ -10,3 +10,8 @@ export const SignUpService = async (firstName, lastName, email, password) =>
     firstName,
     lastName,
   });
+
+export const FetchVideosService = async () => await axios.get("/api/videos");
+
+export const FetchCategoryService = async () =>
+  await axios.get("/api/categories");

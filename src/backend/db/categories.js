@@ -8,7 +8,31 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
+    categoryName: "All",
+  },
+  {
+    _id: uuid(),
     categoryName: "Action",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Marvel",
+  },
+  {
+    _id: uuid(),
+    categoryName: "English",
+  },
+  {
+    _id: uuid(),
+    categoryName: "DC",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Hindi",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Comedy",
   },
   {
     _id: uuid(),
@@ -16,11 +40,19 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "SCI_FI",
+    categoryName: "Hindi Web Series",
   },
   {
     _id: uuid(),
-    categoryName: "Comedy",
+    categoryName: "English Web Series",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Drama",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Musical Drama",
   },
   {
     _id: uuid(),
@@ -32,6 +64,18 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "Heist",
+    categoryName: "Romance",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Thriller",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Sci-Fi",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Hollywood",
   },
 ];

@@ -118,6 +118,7 @@ label[for="remember"] {
   text-decoration: underline;
   color: var(--primary);
   font-size: 1.4rem;
+  font-weight: 500;
   margin-left: 0.5rem;
 }
 

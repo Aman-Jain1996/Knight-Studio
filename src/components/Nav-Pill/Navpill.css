@@ -1,8 +1,20 @@
+.navpill-outer-container {
+  position: absolute;
+  width: 100%;
+}
+
 .navpill-container {
-  margin: 2.4rem 4.8rem 0;
-  padding: 1.6rem 0;
+  padding: 1rem;
+  margin: 1.2rem 2.4rem;
   display: flex;
-  gap: 1.6rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: auto;
+  gap: 1rem;
+}
+
+.navpill-container::-webkit-scrollbar {
+  display: none;
 }
 
 .navpill {
@@ -10,8 +22,12 @@
   border: 2px solid var(--primary);
   border-radius: 1rem;
   font-size: 1.4rem;
-  /* color: var(--bg-white); */
   font-weight: 600;
-  /* background-color: var(--primary); */
   cursor: pointer;
+  white-space: nowrap;
+}
+
+.navpill-active {
+  background-color: var(--primary);
+  color: var(--bg-darkWhite);
 }

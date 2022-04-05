@@ -3,7 +3,8 @@ import "./Auth.css";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import { Link, useLocation } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth, useData } from "../../contexts";
+import { actionType } from "../../reducers/actionTypes";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -11,13 +12,36 @@ const Login = () => {
   const [eye, setEye] = useState(true);
   const emailRef = useRef();
   const passwordRef = useRef();
-
-  const { loginHandler, token } = useAuth();
   const location = useLocation();
+
+  const { state, dispatch } = useData();
+  const { loginHandler, token, user } = useAuth();
 
   const redirectionPath = location.state?.path || "/explore";
 
-  useEffect(() => {});
+  useEffect(() => {
+    if (token) {
+      dispatch({
+        type: actionType.SET_HISTORY,
+        payload: { history: user?.history },
+      });
+
+      dispatch({
+        type: actionType.SET_LIKES,
+        payload: { likes: user?.likes },
+      });
+
+      dispatch({
+        type: actionType.SET_PLAYLISTS,
+        payload: { playlists: user?.playlist },
+      });
+
+      dispatch({
+        type: actionType.SET_WATCH_LATER,
+        payload: { watchlater: user?.watchlater },
+      });
+    }
+  }, [user]);
 
   const changeHandler = (e) => {
     switch (e.target.name) {

@@ -4,19 +4,17 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 
-export function Videocard() {
+export function Videocard({ video }) {
+  const { imageUrl, title, creator } = video;
   return (
     <div className="videocard-container">
       <div className="video-banner">
-        <img
-          src="https://res.cloudinary.com/ajain8479/image/upload/v1648884662/Kashmir-Files_oymxyf.jpg"
-          alt="image"
-        />
+        <img src={imageUrl} alt="image" />
       </div>
       <div className="video-content">
         <div className="content">
-          <span className="video-title">Aman</span>
-          <span className="video-creator">Jain</span>
+          <span className="video-title">{title}</span>
+          <span className="video-creator">{creator}</span>
         </div>
         <div className="video-menu">
           <MoreVertIcon className="video-menu-icon" />
