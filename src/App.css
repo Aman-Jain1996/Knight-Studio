@@ -1,0 +1,19 @@
+.icon-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-content-container:hover {
+  color: var(--primary-Light);
+}
+
+.logo-container .icon {
+  font-size: 2.4rem;
+}
+
+.content-container {
+  font-size: 1.2rem;
+}

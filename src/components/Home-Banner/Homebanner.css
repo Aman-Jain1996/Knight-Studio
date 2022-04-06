@@ -1,0 +1,50 @@
+.homebanner-container {
+  display: flex;
+  width: 100%;
+  padding: 1.2rem 3.6rem;
+  max-height: 80vh;
+  background-color: var(--text-greyLight);
+}
+
+.homebanner-content {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homebanner-image {
+  flex: 0 0 50%;
+  padding: 3.6rem 2.4rem;
+}
+
+.banner-content-heading {
+  font-size: 3.6rem;
+  font-family: "Nunito sans", cursive;
+  font-weight: 800;
+  padding-bottom: 2.4rem;
+}
+
+.banner-content-para {
+  font-size: 1.4rem;
+  padding-bottom: 2.4rem;
+}
+
+.homebanner-button-container {
+  padding: 1.2rem 2.4rem;
+  background-color: var(--primary-Light);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.homebanner-button-link {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.homebanner-button-container:hover {
+  background-color: var(--primary);
+  outline: 1px solid;
+}
