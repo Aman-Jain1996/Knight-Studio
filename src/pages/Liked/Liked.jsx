@@ -27,7 +27,7 @@ function Liked() {
         ) : (
           <div className="liked-list">
             {state.likes.map((like) => (
-              <VideocardHorizontal key={like._id} cardData={like} />
+              <VideocardHorizontal key={like._id} cardData={like} from="like" />
             ))}
           </div>
         )}

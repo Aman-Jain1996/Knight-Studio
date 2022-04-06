@@ -7,7 +7,6 @@ export function PrivateRoute({ children }) {
   const location = useLocation();
 
   const { token } = useAuth();
-  console.log(token);
 
   useEffect(() => {
     if (!token) {

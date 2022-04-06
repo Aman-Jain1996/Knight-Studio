@@ -5,4 +5,7 @@ export const actionType = {
   SET_PLAYLISTS: "Set Playlists",
   SET_HISTORY: "Set History",
   SET_WATCH_LATER: "Set Watch Later",
+  MENU_TOGGLE: "Menu Toggle",
+  DISLIKE_VIDEO: "Dislike Video",
+  REMOVE_WATCH_LATER : 'Remove from Watch Later'
 };

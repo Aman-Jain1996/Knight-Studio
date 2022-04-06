@@ -11,6 +11,13 @@
   margin: 1.2rem;
 }
 
+.videocard-horizontal-image img {
+  object-fit: cover;
+  object-position: center;
+  max-width: 20rem;
+  max-height: 10rem;
+}
+
 .videocard-horizontal-content {
   padding: 2rem 1.2rem;
 }
