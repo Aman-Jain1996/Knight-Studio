@@ -6,6 +6,8 @@ import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { useData, useAuth } from "../../contexts";
 import { actionType } from "../../reducers/actionTypes";
 import { useNavigate } from "react-router-dom";
+import { PostLikeVideo, PostWatchLaterVideos } from "../../Utlis";
+import { useDislikeVideo, useRemoveWatchLater } from "../../custom-hooks";
 
 export function Videocard({ video }) {
   const { state, dispatch } = useData();
@@ -14,7 +16,7 @@ export function Videocard({ video }) {
 
   const navigate = useNavigate();
 
-  const isLiked = state.likes.find((like) => like._id === _id);
+  const isLiked = state.likes?.find((like) => like._id === _id);
   const isWatchLater = state.watchLater.find((later) => later._id === _id);
 
   useEffect(() => {
@@ -33,11 +35,7 @@ export function Videocard({ video }) {
 
   const likeClickHandler = () => {
     if (token) {
-      dispatch({
-        type: actionType.SET_LIKES,
-        payload: { likes: [{ ...video }] },
-      });
-
+      PostLikeVideo(dispatch, video, token);
       dispatch({
         type: actionType.MENU_TOGGLE,
         payload: { id: 1 },
@@ -48,23 +46,12 @@ export function Videocard({ video }) {
   };
 
   const dislikeClickHandler = () => {
-    dispatch({
-      type: actionType.SET_LIKES,
-      payload: { type: actionType.DISLIKE_VIDEO, id: _id },
-    });
-    dispatch({
-      type: actionType.MENU_TOGGLE,
-      payload: { id: 1 },
-    });
+    useDislikeVideo(dispatch, _id, token);
   };
 
   const watchLaterClickHandler = () => {
     if (token) {
-      dispatch({
-        type: actionType.SET_WATCH_LATER,
-        payload: { watchlater: [{ ...video }] },
-      });
-
+      PostWatchLaterVideos(dispatch, video, token);
       dispatch({
         type: actionType.MENU_TOGGLE,
         payload: { id: 1 },
@@ -75,14 +62,7 @@ export function Videocard({ video }) {
   };
 
   const removeWatchLaterClickHandler = () => {
-    dispatch({
-      type: actionType.SET_WATCH_LATER,
-      payload: { type: actionType.REMOVE_WATCH_LATER, id: _id },
-    });
-    dispatch({
-      type: actionType.MENU_TOGGLE,
-      payload: { id: 1 },
-    });
+    useRemoveWatchLater(dispatch, _id, token);
   };
 
   return (
@@ -102,27 +82,27 @@ export function Videocard({ video }) {
           />
           {menu && (
             <div className="video-menu-container">
-              <div className="menu-items">
+              <div
+                className="menu-items"
+                onClick={isLiked ? dislikeClickHandler : likeClickHandler}
+              >
                 <span>
                   <ThumbUpAltIcon />
                 </span>
-                {isLiked ? (
-                  <div onClick={dislikeClickHandler}>Dislike video</div>
-                ) : (
-                  <div onClick={likeClickHandler}>Like Video</div>
-                )}
+                {isLiked ? "Dislike video" : "Like Video"}
               </div>
-              <div className="menu-items">
+              <div
+                className="menu-items"
+                onClick={
+                  isWatchLater
+                    ? removeWatchLaterClickHandler
+                    : watchLaterClickHandler
+                }
+              >
                 <span>
                   <BookmarkIcon />
                 </span>
-                {isWatchLater ? (
-                  <div onClick={removeWatchLaterClickHandler}>
-                    Remove Watch Later
-                  </div>
-                ) : (
-                  <div onClick={watchLaterClickHandler}>Watch Later</div>
-                )}
+                {isWatchLater ? "Remove Watch Later" : "Watch Later"}
               </div>
             </div>
           )}

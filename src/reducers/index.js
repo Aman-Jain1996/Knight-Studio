@@ -1,6 +1,10 @@
 import { actionType } from "./actionTypes";
 
 export const initialState = {
+  filters: {
+    search: "",
+    category: "All",
+  },
   videos: [],
   categories: [],
   history: [],
@@ -33,15 +37,9 @@ export const DataReducer = (state, action) => {
       };
 
     case actionType.SET_LIKES:
-      if (action.payload.type === actionType.DISLIKE_VIDEO) {
-        return {
-          ...state,
-          likes: state.likes.filter((like) => like._id !== action.payload.id),
-        };
-      }
       return {
         ...state,
-        likes: state.likes.concat(action.payload.likes),
+        likes: action.payload.likes,
       };
 
     case actionType.SET_PLAYLISTS:
@@ -51,17 +49,9 @@ export const DataReducer = (state, action) => {
       };
 
     case actionType.SET_WATCH_LATER:
-      if (action.payload.type === actionType.REMOVE_WATCH_LATER) {
-        return {
-          ...state,
-          watchLater: state.watchLater.filter(
-            (later) => later._id !== action.payload.id
-          ),
-        };
-      }
       return {
         ...state,
-        watchLater: state.watchLater.concat(action.payload.watchlater),
+        watchLater: action.payload.watchlater,
       };
 
     case actionType.MENU_TOGGLE:
@@ -74,13 +64,23 @@ export const DataReducer = (state, action) => {
         ),
       };
 
-    // case actionType.SET_LIKE_VIDEO:
-    //   const likedVideo = state.videos.filter((video) => video._id === id);
-    //   console.log(likedVideo);
-    //   return {
-    //     ...state,
-    //     likes: state.likes.concat(likedVideo),
-    //   };
+    case actionType.SEARCH_FILTER_CHANGE:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          search: action.payload.search,
+        },
+      };
+
+    case actionType.CATEGORY_FILTER_CHANGE:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          category: action.payload.category,
+        },
+      };
 
     default:
       return state;

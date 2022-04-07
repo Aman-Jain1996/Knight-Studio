@@ -2,34 +2,22 @@ import React from "react";
 import "./VideocardHorizontal.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import { useData } from "../../contexts";
+import { useAuth, useData } from "../../contexts";
 import { actionType } from "../../reducers/actionTypes";
+import { useDislikeVideo, useRemoveWatchLater } from "../../custom-hooks";
 
 export function VideocardHorizontal({ cardData, from }) {
   const { _id, imageUrl, title, creator } = cardData;
   const { dispatch } = useData();
+  const { token } = useAuth();
   const date = new Date();
 
   const dislikeClickHandler = () => {
-    dispatch({
-      type: actionType.SET_LIKES,
-      payload: { type: actionType.DISLIKE_VIDEO, id: _id },
-    });
-    dispatch({
-      type: actionType.MENU_TOGGLE,
-      payload: { id: 1 },
-    });
+    useDislikeVideo(dispatch, _id, token);
   };
 
   const removeWatchLaterClickHandler = () => {
-    dispatch({
-      type: actionType.SET_WATCH_LATER,
-      payload: { type: actionType.REMOVE_WATCH_LATER, id: _id },
-    });
-    dispatch({
-      type: actionType.MENU_TOGGLE,
-      payload: { id: 1 },
-    });
+    useRemoveWatchLater(dispatch, _id, token);
   };
 
   return (

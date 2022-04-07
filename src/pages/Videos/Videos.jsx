@@ -1,15 +1,16 @@
 import React from "react";
 import { Videocard, NavpillContainer } from "../../components";
-import { useData } from "../../contexts";
+import { useFilteredData } from "../../custom-hooks";
 import "./Videos.css";
 
 function Videos() {
-  const { state } = useData();
+  const filteredVideos = useFilteredData();
+
   return (
     <>
       <NavpillContainer />
       <div className="video-list-container">
-        {state.videos.map((video) => (
+        {filteredVideos.map((video) => (
           <Videocard video={video} key={video._id} />
         ))}
       </div>
