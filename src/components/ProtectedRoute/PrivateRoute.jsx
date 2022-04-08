@@ -13,7 +13,7 @@ export function PrivateRoute({ children }) {
       navigate("/login", { state: { path: location.pathname } });
       return null;
     }
-  });
+  }, [token]);
 
   return <>{children}</>;
 }

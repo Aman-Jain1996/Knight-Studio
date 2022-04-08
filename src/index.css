@@ -43,3 +43,10 @@ img {
 button {
   cursor: pointer;
 }
+
+.Toastify__toast--success,
+.Toastify__toast--warning,
+.Toastify__toast--error,
+.Toastify__toast--info {
+  font-size: 1.4rem;
+}

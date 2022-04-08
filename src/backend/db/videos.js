@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 /**
  * Videos Database can be added here.
  * You can add videos of your wish with different attributes
@@ -7,7 +5,7 @@ import { v4 as uuid } from "uuid";
 
 export const videos = [
   {
-    _id: uuid(),
+    _id: "ZYzbalQ6Lg8",
     title: "Spider-Man: No Way Home",
     description:
       "For the first time in the cinematic history of Spider-Man, our friendly neighborhood hero's identity is revealed, bringing his Super Hero responsibilities into conflict with his normal life and putting those he cares about most at risk.",
@@ -16,7 +14,7 @@ export const videos = [
     categories: ["Marvel", "Action", "English"],
   },
   {
-    _id: uuid(),
+    _id: "EXeTwQWrcwY",
     title: "The Dark Knight",
     description:
       "This time, Heath Ledger joins the cast as The Joker, and Aaron Eckhart stars as Harvey Dent in an all-new adventure of The Dark Knight. With the help of Lieutenant Jim Gordon (Gary Oldman) and new district attorney Harvey Dent (Eckhart--Thank You for Smoking), Batman sets out to destroy organized crime in Gotham City forever.",
@@ -26,7 +24,7 @@ export const videos = [
     categories: ["DC", "Action"],
   },
   {
-    _id: uuid(),
+    _id: "f-UzOpuKOVY",
     title: "Fukrey Returns",
     description:
       "Fukrey Returns' picks up a year later from where it ended. Having enjoyed the spoils of war they had so audaciously waged, the Fukras are now at crossroads with their past, which is about to decide their future.",
@@ -35,7 +33,7 @@ export const videos = [
     categories: ["Hindi", "Comedy"],
   },
   {
-    _id: uuid(),
+    _id: "lK37BUaYPIY",
     title: "Criminal Justice",
     description:
       "Criminal Justice is an Indian Hindi-language crime thriller legal drama web series for Hotstar Specials, based on the 2008 British television series of the same name, written by Shridhar Raghavan and was directed by Tigmanshu Dhulia and Vishal Furia.",
@@ -45,7 +43,7 @@ export const videos = [
     categories: ["Hindi", "Hindi Web Series", "Crime"],
   },
   {
-    _id: uuid(),
+    _id: "ndl1W4ltcmg",
     title: "The Witcher",
     description:
       "The witcher Geralt, a mutated monster hunter, struggles to find his place in a world in which people often prove more wicked than beasts.",
@@ -55,7 +53,7 @@ export const videos = [
     categories: ["English Web Series", "Drama"],
   },
   {
-    _id: uuid(),
+    _id: "JfbxcD6biOk",
     title: "Gully Boy",
     description:
       "Gully Boy is a 2019 Indian Hindi-language musical drama film directed by Zoya Akhtar, and written by Akhtar and Reema Kagti.Inspired by the lives of Indian street rappers Divine and Naezy,[6] the film is a coming-of-age story about an aspiring street rapper from the Dharavi slums of Mumbai.",
@@ -65,7 +63,7 @@ export const videos = [
     categories: ["Musical Drama", "Hindi"],
   },
   {
-    _id: uuid(),
+    _id: "ejMMn0t58Lc",
     title: "The Conjuring (2013)",
     description:
       "The Conjuring tells the suspenseful tale of Lorraine (Vera Farmiga) and Ed Warren (Patrick Wilson), world renowned paranormal investigators, who were called to help a family terrorized by a dark presence in a secluded farmhouse. ",
@@ -74,7 +72,7 @@ export const videos = [
     categories: ["Horror", "English"],
   },
   {
-    _id: uuid(),
+    _id: "1J76wN0TPI4",
     title: "Sanju",
     description:
       "Few lives in our times are as dramatic and enigmatic as the saga of Sanjay Dutt. Coming from a family of cinema legends, he became a film star, and then saw dizzying heights and darkest depths: adulation of die-hard fans, unending battles with various addictions, brushes with the underworld, prison terms, loss of loved ones, and the haunting speculation that he might or might not be a terrorist. ",
@@ -83,7 +81,7 @@ export const videos = [
     categories: ["Hindi", "Drama", "Biography"],
   },
   {
-    _id: uuid(),
+    _id: "K0eDlFX9GMc",
     title: "3 Idiots",
     description:
       "Two friends embark on a quest for a lost buddy. On this journey, they encounter a long forgotten bet, a wedding they must crash, and a funeral that goes, ridiculously out of control. As they make their way through the perilous landscape, another journey begins. Their inner journey through memory lane and the story of their friend -- the impressible free-thinker Rancho, who is in unique way, touched and changed their lives.",
@@ -92,7 +90,7 @@ export const videos = [
     categories: ["Comedy", "Drama"],
   },
   {
-    _id: uuid(),
+    _id: "VBM6TxgeIHY",
     title: "Dear Zindagi",
     description:
       "Kaira is a budding cinematographer in search of a perfect life. Her encounter with Jug, an unconventional thinker, helps her gain a new perspective on life. She discovers that happiness is all about finding comfort in life's imperfections.",
@@ -101,7 +99,7 @@ export const videos = [
     categories: ["Romance"],
   },
   {
-    _id: uuid(),
+    _id: "bKL1ImsN-DU",
     title: "IT Chapter Two",
     description:
       "Because every 27 years evil revisits the town of Derry, Maine, “IT Chapter Two” brings the characters—who’ve long since gone their separate ways—back together as adults, nearly three decades after the events of the first film.",
@@ -110,7 +108,7 @@ export const videos = [
     categories: ["Horror", "Thriller"],
   },
   {
-    _id: uuid(),
+    _id: "zSWdZVtXT7E",
     title: "Interstellar",
     description:
       "With our time on Earth coming to an end, a team of explorers undertakes the most important mission in human history: traveling beyond this galaxy to discover whether mankind has a future among the stars.",
@@ -119,7 +117,7 @@ export const videos = [
     categories: ["Sci-Fi", "Hollywood"],
   },
   {
-    _id: uuid(),
+    _id: "ZG--GOpi_0g",
     title: "Detective Byomkesh Bakshy",
     description:
       "Detective Byomkesh Bakshy is based on the early exploits of India’s first true-blue detective, created by Bengali bestseller writer Saradindu Bandyopadhyay. Directed by Dibakar Banerjee, the film is set in the Second World War torn Calcutta during the 1940s and follows the first adventure of Byomkesh Bakshy (Sushant Singh Rajput), fresh out of college, as he pits himself against an evil genius who is out to destroy the world.",

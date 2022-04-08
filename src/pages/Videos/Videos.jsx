@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Videocard, NavpillContainer } from "../../components";
+import { useData } from "../../contexts";
 import { useFilteredData } from "../../custom-hooks";
 import "./Videos.css";
 
 function Videos() {
+  const { setLoader } = useData();
   const filteredVideos = useFilteredData();
+
+  useEffect(() => {
+    scrollTo(0, 0);
+    setLoader(true);
+    let timer = setTimeout(() => {
+      setLoader(false);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <>

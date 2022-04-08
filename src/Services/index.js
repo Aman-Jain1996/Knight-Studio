@@ -15,6 +15,9 @@ export const SignUpService = async (firstName, lastName, email, password) =>
 
 export const FetchVideosService = async () => await axios.get("/api/videos");
 
+export const FetchVideoService = async (videoId) =>
+  await axios.get(`/api/video/${videoId}`);
+
 // category services
 
 export const FetchCategoryService = async () =>
@@ -87,6 +90,31 @@ export const FetchPlaylistsService = async (encodedToken) =>
 
 export const FetchHistoryService = async (encodedToken) =>
   await axios.get("/api/user/history", {
+    headers: {
+      authorization: encodedToken,
+    },
+  });
+
+export const PostHistoryService = async (encodedToken, video) =>
+  await axios.post(
+    "/api/user/history",
+    { video },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );
+
+export const DeleteVideoHistoryService = async (encodedToken, videoId) =>
+  await axios.delete(`/api/user/history/${videoId}`, {
+    headers: {
+      authorization: encodedToken,
+    },
+  });
+
+export const DeleteAllHistoryVideoService = async (encodedToken) =>
+  await axios.delete(`/api/user/history/all`, {
     headers: {
       authorization: encodedToken,
     },

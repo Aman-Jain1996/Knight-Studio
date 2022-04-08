@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useReducer } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { DataReducer, initialState } from "../reducers";
 import {
   GetAllCategories,
@@ -15,6 +21,7 @@ const DataContext = createContext(null);
 export function DataProvider({ children }) {
   const { token } = useAuth();
   const [state, dispatch] = useReducer(DataReducer, initialState);
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     GetAllVideos(dispatch);
@@ -32,7 +39,7 @@ export function DataProvider({ children }) {
 
   return (
     <div>
-      <DataContext.Provider value={{ state, dispatch }}>
+      <DataContext.Provider value={{ state, dispatch, loader, setLoader }}>
         {children}
       </DataContext.Provider>
     </div>

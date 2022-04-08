@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginService, SignUpService } from "../Services";
+import { ToastHandler } from "../Utlis/toastUtils";
 
 const AuthContext = createContext(null);
 
@@ -17,6 +18,7 @@ export function AuthProvider({ children }) {
         data: { foundUser, encodedToken },
       } = await LoginService(email, password);
       if (status === 200 || status === 201) {
+        ToastHandler("success", "Logged in Successfully.....");
         localStorage.setItem(
           "userToken",
           JSON.stringify({ token: encodedToken })
@@ -37,6 +39,7 @@ export function AuthProvider({ children }) {
         status,
       } = await SignUpService(firstName, lastName, email, password);
       if (status === 200 || status === 201) {
+        ToastHandler("success", "Logged in Successfully.....");
         localStorage.setItem(
           "userToken",
           JSON.stringify({ token: encodedToken })
