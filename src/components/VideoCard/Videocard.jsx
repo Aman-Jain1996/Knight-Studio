@@ -1,19 +1,17 @@
 import React from "react";
 import "./Videocard.css";
-import banner1 from "../../assets/Kashmir-Files.jpg";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import HomeIcon from "@mui/icons-material/Home";
-import ExploreIcon from "@mui/icons-material/Explore";
-import QueueIcon from "@mui/icons-material/Queue";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import HistoryIcon from "@mui/icons-material/History";
 
 function Videocard() {
   return (
     <div className="videocard-container">
       <div className="video-banner">
-        <img src={banner1} alt="image" />
+        <img
+          src="https://res.cloudinary.com/ajain8479/image/upload/v1648884662/Kashmir-Files_oymxyf.jpg"
+          alt="image"
+        />
       </div>
       <div className="video-content">
         <div className="content">

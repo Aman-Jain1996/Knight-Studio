@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import banner1 from "../../assets/Kashmir-Files.jpg";
-import banner2 from "../../assets/Rudra.webp";
-import banner3 from "../../assets/The-Witcher.jpg";
 import "./Carousel.css";
 
 function Carousel() {
@@ -34,15 +31,24 @@ function Carousel() {
     <>
       <div className="slideshow-container">
         <div className="mySlides fade">
-          <img src={banner1} alt="banner-image" />
+          <img
+            src="https://res.cloudinary.com/ajain8479/image/upload/v1648884662/Kashmir-Files_oymxyf.jpg"
+            alt="banner-image"
+          />
         </div>
 
         <div className="mySlides fade">
-          <img src={banner2} alt="banner-image" />
+          <img
+            src="https://res.cloudinary.com/ajain8479/image/upload/v1648884661/Rudra_dytwer.webp"
+            alt="banner-image"
+          />
         </div>
 
         <div className="mySlides fade">
-          <img src={banner3} alt="banner-image" />
+          <img
+            src="https://res.cloudinary.com/ajain8479/image/upload/v1648884661/The-Witcher_quvkob.jpg"
+            alt="banner-image"
+          />
         </div>
       </div>
     </>

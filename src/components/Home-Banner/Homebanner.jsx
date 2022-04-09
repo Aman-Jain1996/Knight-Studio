@@ -4,7 +4,10 @@ import "./Homebanner.css";
 
 function Homebanner({ imageUrl, heading, content, reversed }) {
   return (
-    <div className="homebanner-container">
+    <div
+      style={{ backgroundColor: reversed !== "true" && "white" }}
+      className="homebanner-container"
+    >
       <div
         className="homebanner-content"
         style={{ order: reversed === "true" ? 1 : -1 }}
