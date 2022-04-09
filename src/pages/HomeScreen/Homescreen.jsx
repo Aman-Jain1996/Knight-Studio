@@ -16,4 +16,4 @@ function Homescreen() {
   );
 }
 
-export default Homescreen;
+export { Homescreen };

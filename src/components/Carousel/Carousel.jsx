@@ -21,7 +21,6 @@ function Carousel() {
 
   useEffect(() => {
     showSlides();
-    console.log("useEffect");
     return () => {
       clearTimeout(timer);
     };
