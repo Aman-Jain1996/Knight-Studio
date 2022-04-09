@@ -7,7 +7,8 @@
   width: 100%;
   align-items: center;
   z-index: 10;
-  position: relative;
+  position: sticky;
+  top:0;
 }
 
 .nav-left-container {
@@ -32,15 +33,14 @@
   gap: 1.6rem;
 }
 
-.nav-pills {
+.nav-pills a {
   font-family: "Nunito Sans", cursive;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 
-.nav-pills:hover {
-  color: var(--primary-Light);
-  transform: scale(1.1);
+.nav-pills:hover a {
+  color: var(--primary);
 }
 
 .nav-right-container {
@@ -61,6 +61,10 @@
   border-radius: 8px;
   padding: 1rem;
   background-color: var(--bg-darkWhite);
+}
+
+.searchbar:focus-within {
+  border: 2px solid var(--primary);
 }
 
 .searchbar > .icon {

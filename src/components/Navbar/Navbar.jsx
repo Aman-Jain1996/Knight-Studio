@@ -2,16 +2,23 @@ import React from "react";
 import "./Navbar.css";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <>
       <nav className="navbar-container">
         <div className="nav-left-container">
-          <div className="nav-logo">Knight Studio</div>
+          <div className="nav-logo">
+            <Link to="/">Knight Studio</Link>
+          </div>
           <div className="nav-left-pill-container">
-            <div className="nav-pills">Explore</div>
-            <div className="nav-pills">Playlists</div>
+            <div className="nav-pills">
+              <Link to="/explore">Explore</Link>
+            </div>
+            <div className="nav-pills">
+              <Link to="">Playlists</Link>
+            </div>
           </div>
         </div>
 

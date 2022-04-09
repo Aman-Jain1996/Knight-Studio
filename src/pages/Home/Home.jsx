@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import banner1 from "../../assets/Kashmir-Files.jpg";
 import banner2 from "../../assets/Rudra.webp";
 import banner3 from "../../assets/The-Witcher.jpg";
@@ -23,7 +24,9 @@ function Home() {
             <div className="arrowline arrowline-2"></div>
             <div className="arrowline arrowline-3"></div>
           </div>
-          <span className="btn-text">Explore Now</span>
+          <span className="btn-text">
+            <Link to="/explore">Explore Now</Link>
+          </span>
         </a>
       </div>
 
