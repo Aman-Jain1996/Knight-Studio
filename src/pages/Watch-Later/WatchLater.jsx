@@ -1,16 +1,16 @@
 import React from "react";
 import VideocardHorizontal from "../../components/VideoCard-Horizontal/VideocardHorizontal";
 
-function History() {
+function WatchLater() {
   return (
     <>
-      <h2 className="page-heading">Watch History</h2>
+      <h2 className="page-heading">Watch Later</h2>
       <div className="liked-container">
         <div className="aside-container">
           <div className="aside-image-container">
             <img
-              src="https://res.cloudinary.com/ajain8479/image/upload/v1648887690/undraw_reading_time_re_phf7_s2rpf3.svg"
-              alt="watch-history-image"
+              src="https://res.cloudinary.com/ajain8479/image/upload/v1648897778/undraw_save_to_bookmarks_re_8ajf_htnrkk.svg"
+              alt="liked-image"
             />
           </div>
           <div className="liked-content">
@@ -26,4 +26,4 @@ function History() {
   );
 }
 
-export { History };
+export { WatchLater };

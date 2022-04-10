@@ -3,6 +3,13 @@
   margin: 3.6rem 4.8rem;
 }
 
+.page-heading {
+  margin: 2.4rem 0 0 4.8rem;
+  font-size: 3rem;
+  font-family: "Nunito sans", cursive;
+  font-weight: 700;
+}
+
 .aside-container {
   flex: 0 0 35%;
 }
@@ -10,6 +17,7 @@
 .aside-image-container {
   width: 32rem;
   height: 20rem;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .liked-list {

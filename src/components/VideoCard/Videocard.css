@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.video-banner img {
+  object-fit: fill;
+}
+
 .video-content {
   padding: 0 1rem;
   display: flex;
