@@ -1,19 +1,24 @@
 import { actionType } from "../reducers/actionTypes";
 import {
+  AddVideoToPlaylistService,
   DeleteAllHistoryVideoService,
   DeleteLikeService,
+  DeletePlaylistService,
   DeleteVideoHistoryService,
   DeleteWatchLaterService,
   FetchCategoryService,
   FetchHistoryService,
   FetchLikedService,
   FetchPlaylistsService,
+  FetchSinglePlaylistService,
   FetchVideoService,
   FetchVideosService,
   FetchWatchLaterService,
   PostHistoryService,
   PostLikeService,
+  PostPlaylistService,
   PostWatchLaterService,
+  RemoveVideoFromPlaylistService,
 } from "../Services";
 import { ToastHandler } from "./toastUtils";
 
@@ -132,6 +137,104 @@ export const GetPlaylists = async (dispatch, token) => {
       dispatch({
         type: actionType.SET_PLAYLISTS,
         payload: { playlists: playlistsData?.playlists },
+      });
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const GetSinglePlaylist = async (token, playlistId) => {
+  try {
+    const { data: playlistsData, status: playlistsStatus } =
+      await FetchSinglePlaylistService(token, playlistId);
+
+    if (playlistsStatus === 200 || playlistsStatus === 201) {
+      return playlistsData.playlist;
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const AddNewPlaylist = async (
+  dispatch,
+  token,
+  title,
+  desc,
+  isReturn
+) => {
+  try {
+    const { data: playlistsData, status: playlistsStatus } =
+      await PostPlaylistService(token, title, desc);
+
+    if (playlistsStatus === 200 || playlistsStatus === 201) {
+      !isReturn && ToastHandler("success", "New Playlist added.....");
+      dispatch({
+        type: actionType.SET_PLAYLISTS,
+        payload: { playlists: playlistsData?.playlists },
+      });
+      if (isReturn) return playlistsData?.playlists;
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const DeletePlaylist = async (dispatch, token, playlistId) => {
+  try {
+    const { data: playlistsData, status: playlistsStatus } =
+      await DeletePlaylistService(token, playlistId);
+
+    if (playlistsStatus === 200 || playlistsStatus === 201) {
+      ToastHandler("warn", "Playlist removed.....");
+      dispatch({
+        type: actionType.SET_PLAYLISTS,
+        payload: { playlists: playlistsData?.playlists },
+      });
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const AddVideoToPlaylist = async (
+  dispatch,
+  token,
+  playlistId,
+  video
+) => {
+  try {
+    const { data: playlistsData, status: playlistsStatus } =
+      await AddVideoToPlaylistService(token, playlistId, video);
+
+    if (playlistsStatus === 200 || playlistsStatus === 201) {
+      ToastHandler("success", "Video added to Playlist.....");
+      dispatch({
+        type: actionType.SET_PLAYLIST,
+        payload: { playlistId, playlist: playlistsData?.playlist },
+      });
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const RemoveVideoFromPlaylist = async (
+  dispatch,
+  token,
+  playlistId,
+  videoId
+) => {
+  try {
+    const { data: playlistsData, status: playlistsStatus } =
+      await RemoveVideoFromPlaylistService(token, playlistId, videoId);
+
+    if (playlistsStatus === 200 || playlistsStatus === 201) {
+      ToastHandler("warn", "Video removed from Playlist.....");
+      dispatch({
+        type: actionType.SET_PLAYLIST,
+        payload: { playlistId, playlist: playlistsData?.playlist },
       });
     }
   } catch (err) {

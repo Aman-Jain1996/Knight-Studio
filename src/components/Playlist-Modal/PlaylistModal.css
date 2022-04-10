@@ -1,0 +1,90 @@
+.playlist-modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.playlist-modal {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--text-greyDark);
+  min-width: 30rem;
+  z-index: 9999;
+}
+
+.modal-heading-container {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  justify-content: center;
+  border-bottom: 1px solid var(--bg-lightWhite);
+}
+
+.modal-heading {
+  width: 95%;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.close-icon .icon {
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.playlist-list-container {
+  padding: 2.4rem;
+  border-bottom: 1px solid var(--bg-lightWhite);
+}
+
+.playlist-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.playlist-item {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.playlist-item input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
+.save-button {
+  margin-top: 2.4rem;
+  float: right;
+  border: 1px solid var(--bg-darkWhite);
+  padding: 6px 8px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-playlist-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.create-playlist-container .icon {
+  font-size: 2.6rem;
+}

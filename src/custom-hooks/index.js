@@ -1,5 +1,4 @@
 export { useFilteredData } from "./filteredData";
-
 import { actionType } from "../reducers/actionTypes";
 import {
   PostLikeVideo,
@@ -8,14 +7,16 @@ import {
   DeleteWatchLaterVideo,
   DeleteHistoryVideo,
   DeleteAllHistoryVideo,
+  AddNewPlaylist,
 } from "../Utlis";
 
 export const useLikeVideo = (dispatch, video, token) => {
   PostLikeVideo(dispatch, video, token);
-  dispatch({
-    type: actionType.MENU_TOGGLE,
-    payload: { id: 1 },
-  });
+  dispatch &&
+    dispatch({
+      type: actionType.MENU_TOGGLE,
+      payload: { id: 1 },
+    });
 };
 
 export function useDislikeVideo(dispatch, videoId, token) {
@@ -57,3 +58,7 @@ export function useRemoveAllHistoryVideo(dispatch, token) {
     payload: { id: 1 },
   });
 }
+
+export const useCreateNewPlaylist = (dispatch, token, title, desc) => {
+  AddNewPlaylist(dispatch, token, title, desc);
+};

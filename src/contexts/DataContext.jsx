@@ -22,6 +22,9 @@ export function DataProvider({ children }) {
   const { token } = useAuth();
   const [state, dispatch] = useReducer(DataReducer, initialState);
   const [loader, setLoader] = useState(false);
+  const [isPlaylistModalOpen, setIsPlaylistModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [modalData, setModalData] = useState(null);
 
   useEffect(() => {
     GetAllVideos(dispatch);
@@ -39,7 +42,20 @@ export function DataProvider({ children }) {
 
   return (
     <div>
-      <DataContext.Provider value={{ state, dispatch, loader, setLoader }}>
+      <DataContext.Provider
+        value={{
+          state,
+          dispatch,
+          loader,
+          setLoader,
+          isPlaylistModalOpen,
+          setIsPlaylistModalOpen,
+          isAddModalOpen,
+          setIsAddModalOpen,
+          modalData,
+          setModalData,
+        }}
+      >
         {children}
       </DataContext.Provider>
     </div>

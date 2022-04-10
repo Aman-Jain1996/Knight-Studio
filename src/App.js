@@ -3,8 +3,14 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import { Loading, Navbar, PrivateRoute } from "./components";
-import { useData } from "./contexts";
+import {
+  AddPlaylistModal,
+  Loading,
+  Navbar,
+  PlaylistModal,
+  PrivateRoute,
+} from "./components";
+import { useAuth, useData } from "./contexts";
 import {
   History,
   Home,
@@ -16,12 +22,16 @@ import {
   Videos,
   Video,
   WatchLater,
+  SinglePlaylist,
 } from "./pages";
 
 function App() {
-  const { loader } = useData();
+  const { token } = useAuth();
+  const { loader, isPlaylistModalOpen, isAddModalOpen } = useData();
   return (
     <>
+      {token && isAddModalOpen && <AddPlaylistModal />}
+      {token && isPlaylistModalOpen && <PlaylistModal />}
       {loader && <Loading />}
       <ToastContainer
         position="bottom-right"
@@ -69,6 +79,14 @@ function App() {
             element={
               <PrivateRoute>
                 <Playlist />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="playlists/:playlistId"
+            element={
+              <PrivateRoute>
+                <SinglePlaylist />
               </PrivateRoute>
             }
           />

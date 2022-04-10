@@ -41,7 +41,7 @@ export function Videocard({ video }) {
     if (token) {
       useLikeVideo(dispatch, video, token);
     } else {
-      navigate("/login");
+      navigate("/login", { state: { path: location.pathname } });
     }
   };
 
@@ -53,7 +53,7 @@ export function Videocard({ video }) {
     if (token) {
       useWatchLaterVideo(dispatch, video, token);
     } else {
-      navigate("/login");
+      navigate("/login", { state: { path: location.pathname } });
     }
   };
 

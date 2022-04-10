@@ -10,8 +10,9 @@ import {
   useRemoveWatchLater,
 } from "../../custom-hooks";
 import { useNavigate } from "react-router-dom";
+import { RemoveVideoFromPlaylist } from "../../Utlis";
 
-export function VideocardHorizontal({ cardData, from }) {
+export function VideocardHorizontal({ cardData, from, playlistId }) {
   const { _id, imageUrl, title, creator } = cardData;
   const { dispatch } = useData();
   const { token } = useAuth();
@@ -28,6 +29,10 @@ export function VideocardHorizontal({ cardData, from }) {
 
   const removeWatchHistoryClickHandler = () => {
     useRemoveHistoryVideo(dispatch, _id, token);
+  };
+
+  const removeVideoPlaylistHandler = () => {
+    RemoveVideoFromPlaylist(dispatch, token, playlistId, _id);
   };
 
   return (
@@ -55,6 +60,8 @@ export function VideocardHorizontal({ cardData, from }) {
               ? "Remove from liked videos"
               : from === "history"
               ? "Remove from History"
+              : from === "video"
+              ? "Remove from Playlist"
               : "Remove from Watch Later"
           }
         >
@@ -64,7 +71,9 @@ export function VideocardHorizontal({ cardData, from }) {
                 ? dislikeClickHandler
                 : from === "history"
                 ? removeWatchHistoryClickHandler
-                : removeWatchLaterClickHandler
+                : (from = "video"
+                    ? removeVideoPlaylistHandler
+                    : removeWatchLaterClickHandler)
             }
             className="icon"
           />
