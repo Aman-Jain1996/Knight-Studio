@@ -28,8 +28,17 @@ export function AuthProvider({ children }) {
         navigate(path);
       }
     } catch (err) {
+      ToastHandler("error", "Something went Wrong.....");
       console.error(err);
     }
+  };
+
+  const logoutHandler = async () => {
+    localStorage.removeItem("userToken");
+    setUser(null);
+    setToken(null);
+    navigate("/");
+    ToastHandler("success", "Logged out Successfully.....");
   };
 
   const signUpHandler = async (firstName, lastName, email, password) => {
@@ -49,6 +58,7 @@ export function AuthProvider({ children }) {
         navigate("/explore");
       }
     } catch (err) {
+      ToastHandler("error", "Something went Wrong.....");
       console.error(err);
     }
   };
@@ -56,7 +66,7 @@ export function AuthProvider({ children }) {
   return (
     <>
       <AuthContext.Provider
-        value={{ loginHandler, signUpHandler, user, token }}
+        value={{ loginHandler, logoutHandler, signUpHandler, user, token }}
       >
         {children}
       </AuthContext.Provider>

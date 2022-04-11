@@ -23,6 +23,8 @@ import {
   Video,
   WatchLater,
   SinglePlaylist,
+  ErrorPage,
+  Profile,
 } from "./pages";
 
 function App() {
@@ -93,6 +95,15 @@ function App() {
         </Route>
         <Route path="login" element={<Login />} />
         <Route path="signUp" element={<Signup />} />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );
