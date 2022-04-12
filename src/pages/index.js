@@ -5,3 +5,5 @@ export { Liked } from "./Liked/Liked";
 export { Videos } from "./Videos/Videos";
 export { WatchLater } from "./Watch-Later/WatchLater";
 export { Playlist } from "./Playlists/Playlist";
+export { Login } from "./Auth/Login";
+export { Signup } from "./Auth/Signup";

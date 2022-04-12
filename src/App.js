@@ -8,7 +8,9 @@ import {
   Home,
   Homescreen,
   Liked,
+  Login,
   Playlist,
+  Signup,
   Videos,
   WatchLater,
 } from "./pages";
@@ -27,6 +29,8 @@ function App() {
           <Route path="later" element={<WatchLater />} />
           <Route path="playlists" element={<Playlist />} />
         </Route>
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signUp" element={<Signup />} />
       </Routes>
     </>
   );
