@@ -1,0 +1,37 @@
+.heading-container {
+  position: relative;
+}
+
+.playlist-heading {
+  margin: 2.4rem;
+  text-align: center;
+  font-size: 3.2rem;
+  font-family: "Nunito sans", cursive;
+  font-weight: 700;
+}
+
+.playlists-container {
+  margin: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 4.8rem 1.4rem;
+}
+
+.create-playlist-button {
+  position: absolute;
+  right: 5%;
+  top: 45%;
+  background-color: var(--primary-Light);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.create-playlist-button:hover {
+  background-color: var(--primary);
+  font-weight: 500;
+}

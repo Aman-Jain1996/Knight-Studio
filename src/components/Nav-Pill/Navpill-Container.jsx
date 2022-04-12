@@ -1,8 +1,8 @@
 import React from "react";
-import Navpill from "./Navpill";
+import { Navpill } from "../../components";
 import "./Navpill.css";
 
-function NavpillContainer() {
+export function NavpillContainer() {
   const categories = ["A", "B", "C", "D", "E", "F"];
   return (
     <div className="navpill-container">
@@ -12,5 +12,3 @@ function NavpillContainer() {
     </div>
   );
 }
-
-export default NavpillContainer;

@@ -4,7 +4,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 
-function Videocard() {
+export function Videocard() {
   return (
     <div className="videocard-container">
       <div className="video-banner">
@@ -39,5 +39,3 @@ function Videocard() {
     </div>
   );
 }
-
-export default Videocard;

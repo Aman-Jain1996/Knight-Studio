@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Carousel from "../../components/Carousel/Carousel";
-import Homebanner from "../../components/Home-Banner/Homebanner";
+import { Carousel, Homebanner } from "../../components";
 import "./Home.css";
 
 function Home() {
@@ -14,7 +13,7 @@ function Home() {
       <Carousel />
 
       <div className="home-hero-shop-btn">
-        <a className="home-hero-button">
+        <Link to="/explore" className="home-hero-button">
           <div className="btn-bg"></div>
           <div className="arrow">
             <div className="arrowline arrowline-1"></div>
@@ -22,9 +21,9 @@ function Home() {
             <div className="arrowline arrowline-3"></div>
           </div>
           <span className="btn-text">
-            <Link to="/explore">Explore Now</Link>
+            <p>Explore Now</p>
           </span>
-        </a>
+        </Link>
       </div>
 
       <div className="home-banner-container">

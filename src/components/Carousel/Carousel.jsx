@@ -54,4 +54,4 @@ function Carousel() {
   );
 }
 
-export default Carousel;
+export { Carousel };

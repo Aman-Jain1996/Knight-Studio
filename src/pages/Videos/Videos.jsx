@@ -1,6 +1,5 @@
 import React from "react";
-import NavpillContainer from "../../components/Nav-Pill/Navpill-Container";
-import Videocard from "../../components/VideoCard/Videocard";
+import { Videocard, NavpillContainer } from "../../components";
 import "./Videos.css";
 
 function Videos() {

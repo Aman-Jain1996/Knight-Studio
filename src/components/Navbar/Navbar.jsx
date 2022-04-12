@@ -4,7 +4,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+export function Navbar() {
   return (
     <>
       <nav className="navbar-container">
@@ -46,5 +46,3 @@ function Navbar() {
     </>
   );
 }
-
-export default Navbar;
