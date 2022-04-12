@@ -35,6 +35,7 @@ export const GetAllVideos = async (dispatch) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -49,6 +50,7 @@ export const GetAVideo = async (videoId) => {
       return videoData.video;
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -65,6 +67,7 @@ export const GetAllCategories = async (dispatch) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -84,6 +87,7 @@ export const GetLikedVideos = async (dispatch, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -103,6 +107,7 @@ export const PostLikeVideo = async (dispatch, video, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -122,6 +127,7 @@ export const DeleteLikeVideo = async (dispatch, videoId, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -140,6 +146,7 @@ export const GetPlaylists = async (dispatch, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -153,6 +160,7 @@ export const GetSinglePlaylist = async (token, playlistId) => {
       return playlistsData.playlist;
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -177,6 +185,7 @@ export const AddNewPlaylist = async (
       if (isReturn) return playlistsData?.playlists;
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -194,6 +203,7 @@ export const DeletePlaylist = async (dispatch, token, playlistId) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -216,6 +226,7 @@ export const AddVideoToPlaylist = async (
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -238,6 +249,7 @@ export const RemoveVideoFromPlaylist = async (
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -256,6 +268,7 @@ export const GetWatchLaterVideos = async (dispatch, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -273,6 +286,7 @@ export const PostWatchLaterVideos = async (dispatch, video, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -290,6 +304,7 @@ export const DeleteWatchLaterVideo = async (dispatch, videoId, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -308,6 +323,7 @@ export const GetWatchHistory = async (dispatch, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -324,6 +340,7 @@ export const PostHistoryVideo = async (dispatch, video, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -341,6 +358,7 @@ export const DeleteHistoryVideo = async (dispatch, videoId, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };
@@ -358,6 +376,7 @@ export const DeleteAllHistoryVideo = async (dispatch, token) => {
       });
     }
   } catch (err) {
+    ToastHandler("error", "Something went Wrong.....");
     console.error(err);
   }
 };

@@ -110,12 +110,14 @@ export function Navbar() {
 
         <div className="nav-right-container">
           {user ? (
-            <div className="icon-content-container">
-              <span className="logo-container">
-                <PersonIcon className="icon" />
-              </span>
-              <span className="content-container">Hi , {user.firstName}</span>
-            </div>
+            <Link to="/profile">
+              <div className="icon-content-container">
+                <span className="logo-container">
+                  <PersonIcon className="icon" />
+                </span>
+                <span className="content-container">Hi , {user.firstName}</span>
+              </div>
+            </Link>
           ) : (
             <Link to={location.pathname === "/login" ? "/signUp" : "/login"}>
               <div className="icon-content-container">

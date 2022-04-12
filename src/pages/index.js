@@ -9,3 +9,5 @@ export { Login } from "./Auth/Login";
 export { Signup } from "./Auth/Signup";
 export { Video } from "./Video/Video";
 export { SinglePlaylist } from "./SinglePlaylist/SinglePlaylist";
+export { ErrorPage } from "./404Page/ErrorPage";
+export { Profile } from "./Profile/Profile";
