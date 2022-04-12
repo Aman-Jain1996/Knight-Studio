@@ -7,3 +7,4 @@ export { Navbar } from "./Navbar/Navbar";
 export { PlaylistCard } from "./Playlist/playlistCard";
 export { Videocard } from "./VideoCard/Videocard";
 export { VideocardHorizontal } from "./VideoCard-Horizontal/VideocardHorizontal";
+export { PrivateRoute } from "./ProtectedRoute/PrivateRoute";

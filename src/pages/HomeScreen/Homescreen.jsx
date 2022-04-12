@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Asidenav } from "../../components";
+import { useAuth } from "../../contexts/AuthContext";
 import "./Homescreen.css";
 
 function Homescreen() {

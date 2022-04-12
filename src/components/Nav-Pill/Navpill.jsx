@@ -1,5 +1,5 @@
 import React from "react";
 
 export function Navpill({ pill }) {
-  return <div className="navpill">{pill}</div>;
+  return <div className="navpill">{pill.categoryName}</div>;
 }

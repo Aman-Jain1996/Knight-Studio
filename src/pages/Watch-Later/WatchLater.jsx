@@ -1,7 +1,9 @@
 import React from "react";
 import { VideocardHorizontal } from "../../components";
+import { useData } from "../../contexts";
 
 function WatchLater() {
+  const { state } = useData();
   return (
     <>
       <h2 className="page-heading">Watch Later</h2>
@@ -14,13 +16,20 @@ function WatchLater() {
             />
           </div>
           <div className="liked-content">
-            <div className="counter-container">{2} Videos</div>
+            <div className="counter-container">
+              {state.watchLater.length} Videos
+            </div>
           </div>
         </div>
-        <div className="liked-list">
-          <VideocardHorizontal />
-          <VideocardHorizontal />
-        </div>
+        {state.watchLater.length === 0 ? (
+          <div className="no-item-content">No Watch Later videos </div>
+        ) : (
+          <div className="liked-list">
+            {state.watchLater.map((later) => (
+              <VideocardHorizontal key={later._id} cardData={later} />
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

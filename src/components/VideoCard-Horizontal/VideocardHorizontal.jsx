@@ -3,19 +3,17 @@ import "./VideocardHorizontal.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
-export function VideocardHorizontal() {
+export function VideocardHorizontal({ cardData }) {
+  const { imageUrl, title, creator } = cardData;
   const date = new Date();
   return (
     <div className="videocard-horizontal-container">
       <div className="videocard-horizontal-image">
-        <img
-          src="https://res.cloudinary.com/ajain8479/image/upload/v1648884661/Rudra_dytwer.webp"
-          alt=""
-        />
+        <img src={imageUrl} alt="like-image-banner" />
       </div>
       <div className="videocard-horizontal-content">
-        <div className="content-title">Aman</div>
-        <div className="content-desc">Jain</div>
+        <div className="content-title">{title}</div>
+        <div className="content-desc">{creator}</div>
         <div className="timestamp">
           <span>
             <AccessTimeIcon />

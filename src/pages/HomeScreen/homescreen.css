@@ -4,7 +4,8 @@
 }
 
 .homescreen-main-container {
-  flex: 0 1 90%;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  position: relative;
 }

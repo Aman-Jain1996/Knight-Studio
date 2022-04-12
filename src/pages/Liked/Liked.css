@@ -41,3 +41,9 @@
 .counter-container {
   font-size: 1.6rem;
 }
+
+.no-item-content {
+  width: 100%;
+  font-size: 1.8rem;
+  text-align: center;
+}
