@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Navbar.css";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";

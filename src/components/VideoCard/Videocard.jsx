@@ -6,8 +6,12 @@ import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { useData, useAuth } from "../../contexts";
 import { actionType } from "../../reducers/actionTypes";
 import { useNavigate } from "react-router-dom";
-import { PostLikeVideo, PostWatchLaterVideos } from "../../Utlis";
-import { useDislikeVideo, useRemoveWatchLater } from "../../custom-hooks";
+import {
+  useDislikeVideo,
+  useLikeVideo,
+  useRemoveWatchLater,
+  useWatchLaterVideo,
+} from "../../custom-hooks";
 
 export function Videocard({ video }) {
   const { state, dispatch } = useData();
@@ -35,11 +39,7 @@ export function Videocard({ video }) {
 
   const likeClickHandler = () => {
     if (token) {
-      PostLikeVideo(dispatch, video, token);
-      dispatch({
-        type: actionType.MENU_TOGGLE,
-        payload: { id: 1 },
-      });
+      useLikeVideo(dispatch, video, token);
     } else {
       navigate("/login");
     }
@@ -51,11 +51,7 @@ export function Videocard({ video }) {
 
   const watchLaterClickHandler = () => {
     if (token) {
-      PostWatchLaterVideos(dispatch, video, token);
-      dispatch({
-        type: actionType.MENU_TOGGLE,
-        payload: { id: 1 },
-      });
+      useWatchLaterVideo(dispatch, video, token);
     } else {
       navigate("/login");
     }
@@ -67,7 +63,7 @@ export function Videocard({ video }) {
 
   return (
     <div className="videocard-container">
-      <div className="video-banner">
+      <div className="video-banner" onClick={() => navigate(`/explore/${_id}`)}>
         <img src={imageUrl} alt="image" />
       </div>
       <div className="video-content">

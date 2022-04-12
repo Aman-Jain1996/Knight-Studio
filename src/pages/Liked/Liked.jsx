@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { VideocardHorizontal } from "../../components";
 import { useData } from "../../contexts";
 import "./Liked.css";
@@ -24,7 +25,9 @@ function Liked() {
           </div>
         </div>
         {state.likes.length === 0 ? (
-          <div className="no-item-content">No liked videos</div>
+          <div className="no-item-content">
+            No liked videos <Link to="/explore">Explore</Link>
+          </div>
         ) : (
           <div className="liked-list">
             {state.likes.map((like) => (

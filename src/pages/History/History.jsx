@@ -1,12 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { VideocardHorizontal } from "../../components";
-import { useData } from "../../contexts";
+import { useAuth, useData } from "../../contexts";
+import { useRemoveAllHistoryVideo } from "../../custom-hooks";
 
 function History() {
-  const { state } = useData();
+  const { token } = useAuth();
+  const { state, dispatch } = useData();
   return (
     <>
-      <h2 className="page-heading">Watch History</h2>
+      <div className="heading-container">
+        <h2 className="page-heading">Watch History</h2>
+        {state.history.length !== 0 && (
+          <div
+            className="create-playlist-button clearHistory-button-container "
+            onClick={() => useRemoveAllHistoryVideo(dispatch, token)}
+          >
+            Clear Watch History
+          </div>
+        )}
+      </div>
       <div className="liked-container">
         <div className="aside-container">
           <div className="aside-image-container">
@@ -22,11 +35,18 @@ function History() {
           </div>
         </div>
         {state.history.length === 0 ? (
-          <div className="no-item-content">Nothing in Watch History</div>
+          <div className="no-item-content">
+            Nothing in Watch History
+            <Link to="/explore">Explore</Link>
+          </div>
         ) : (
           <div className="liked-list">
             {state.history.map((history) => (
-              <VideocardHorizontal key={history._id} cardData={history} />
+              <VideocardHorizontal
+                key={history._id}
+                cardData={history}
+                from="history"
+              />
             ))}
           </div>
         )}

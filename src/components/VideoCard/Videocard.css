@@ -44,6 +44,7 @@
 .video-menu {
   margin-left: auto;
   position: relative;
+  z-index: 900;
 }
 
 .video-menu .video-menu-icon {

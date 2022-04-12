@@ -1,8 +1,10 @@
 import Mockman from "mockman-js";
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import { Navbar, PrivateRoute } from "./components";
-
+import { Loading, Navbar, PrivateRoute } from "./components";
+import { useData } from "./contexts";
 import {
   History,
   Home,
@@ -12,18 +14,32 @@ import {
   Playlist,
   Signup,
   Videos,
+  Video,
   WatchLater,
 } from "./pages";
 
 function App() {
+  const { loader } = useData();
   return (
     <>
+      {loader && <Loading />}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={false}
+        newestOnTop={false}
+        closeOnClick
+        theme="colored"
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+      />
       <Navbar />
       <Routes>
         <Route path="mock" element={<Mockman />} />
         <Route exact path="/" element={<Home />} />
         <Route element={<Homescreen />}>
           <Route path="explore" element={<Videos />} />
+          <Route path="explore/:videoId" element={<Video />} />
           <Route
             path="liked"
             element={

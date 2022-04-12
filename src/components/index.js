@@ -8,3 +8,4 @@ export { PlaylistCard } from "./Playlist/playlistCard";
 export { Videocard } from "./VideoCard/Videocard";
 export { VideocardHorizontal } from "./VideoCard-Horizontal/VideocardHorizontal";
 export { PrivateRoute } from "./ProtectedRoute/PrivateRoute";
+export { Loading } from "./Loading/Loading";

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { VideocardHorizontal } from "../../components";
 import { useData } from "../../contexts";
 
@@ -22,7 +23,10 @@ function WatchLater() {
           </div>
         </div>
         {state.watchLater.length === 0 ? (
-          <div className="no-item-content">No Watch Later videos </div>
+          <div className="no-item-content">
+            No Watch Later videos
+            <Link to="/explore">Explore</Link>
+          </div>
         ) : (
           <div className="liked-list">
             {state.watchLater.map((later) => (
