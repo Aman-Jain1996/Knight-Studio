@@ -1,6 +1,10 @@
 import { actionType } from "./actionTypes";
 
 export const initialState = {
+  filters: {
+    search: "",
+    category: "All",
+  },
   videos: [],
   categories: [],
   history: [],
@@ -14,7 +18,10 @@ export const DataReducer = (state, action) => {
     case actionType.SET_VIDEOS:
       return {
         ...state,
-        videos: action.payload.videos,
+        videos: action.payload.videos.map((video) => ({
+          ...video,
+          menu: false,
+        })),
       };
 
     case actionType.SET_CATEGORIES:
@@ -45,6 +52,34 @@ export const DataReducer = (state, action) => {
       return {
         ...state,
         watchLater: action.payload.watchlater,
+      };
+
+    case actionType.MENU_TOGGLE:
+      return {
+        ...state,
+        videos: state.videos.map((video) =>
+          video._id === action.payload.id
+            ? { ...video, menu: !video.menu }
+            : { ...video, menu: false }
+        ),
+      };
+
+    case actionType.SEARCH_FILTER_CHANGE:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          search: action.payload.search,
+        },
+      };
+
+    case actionType.CATEGORY_FILTER_CHANGE:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          category: action.payload.category,
+        },
       };
 
     default:

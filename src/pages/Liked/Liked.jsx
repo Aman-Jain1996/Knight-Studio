@@ -5,6 +5,7 @@ import "./Liked.css";
 
 function Liked() {
   const { state } = useData();
+
   return (
     <>
       <h2 className="page-heading">Liked Videos</h2>
@@ -27,7 +28,7 @@ function Liked() {
         ) : (
           <div className="liked-list">
             {state.likes.map((like) => (
-              <VideocardHorizontal key={like._id} cardData={like} />
+              <VideocardHorizontal key={like._id} cardData={like} from="like" />
             ))}
           </div>
         )}

@@ -60,12 +60,11 @@
   justify-content: center;
   font-weight: 500;
   font-size: 1.4rem;
-  top: 30%;
-  right: 70%;
+  top: 50%;
+  right: 60%;
   border-radius: 8px 0 8px 8px;
   z-index: 100;
   overflow: hidden;
-  display: none;
 }
 
 .menu-items {
@@ -73,7 +72,7 @@
   align-items: center;
   cursor: pointer;
   gap: 1.2rem;
-  padding: 6px 1.2rem;
+  padding: 8px 1.2rem;
 }
 
 .menu-items:hover {

@@ -1,11 +1,70 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Videocard.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import { useData, useAuth } from "../../contexts";
+import { actionType } from "../../reducers/actionTypes";
+import { useNavigate } from "react-router-dom";
+import { PostLikeVideo, PostWatchLaterVideos } from "../../Utlis";
+import { useDislikeVideo, useRemoveWatchLater } from "../../custom-hooks";
 
 export function Videocard({ video }) {
-  const { imageUrl, title, creator } = video;
+  const { state, dispatch } = useData();
+  const { token } = useAuth();
+  const { _id, imageUrl, title, creator, menu } = video;
+
+  const navigate = useNavigate();
+
+  const isLiked = state.likes?.find((like) => like._id === _id);
+  const isWatchLater = state.watchLater.find((later) => later._id === _id);
+
+  useEffect(() => {
+    dispatch({
+      type: actionType.MENU_TOGGLE,
+      payload: { id: 1 },
+    });
+  }, [navigate]);
+
+  const toggleMenuClickHandler = () => {
+    dispatch({
+      type: actionType.MENU_TOGGLE,
+      payload: { id: _id },
+    });
+  };
+
+  const likeClickHandler = () => {
+    if (token) {
+      PostLikeVideo(dispatch, video, token);
+      dispatch({
+        type: actionType.MENU_TOGGLE,
+        payload: { id: 1 },
+      });
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const dislikeClickHandler = () => {
+    useDislikeVideo(dispatch, _id, token);
+  };
+
+  const watchLaterClickHandler = () => {
+    if (token) {
+      PostWatchLaterVideos(dispatch, video, token);
+      dispatch({
+        type: actionType.MENU_TOGGLE,
+        payload: { id: 1 },
+      });
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const removeWatchLaterClickHandler = () => {
+    useRemoveWatchLater(dispatch, _id, token);
+  };
+
   return (
     <div className="videocard-container">
       <div className="video-banner">
@@ -17,21 +76,36 @@ export function Videocard({ video }) {
           <span className="video-creator">{creator}</span>
         </div>
         <div className="video-menu">
-          <MoreVertIcon className="video-menu-icon" />
-          <div className="video-menu-container">
-            <div className="menu-items">
-              <span>
-                <ThumbUpAltIcon />
-              </span>
-              Like Video
+          <MoreVertIcon
+            onClick={toggleMenuClickHandler}
+            className="video-menu-icon"
+          />
+          {menu && (
+            <div className="video-menu-container">
+              <div
+                className="menu-items"
+                onClick={isLiked ? dislikeClickHandler : likeClickHandler}
+              >
+                <span>
+                  <ThumbUpAltIcon />
+                </span>
+                {isLiked ? "Dislike video" : "Like Video"}
+              </div>
+              <div
+                className="menu-items"
+                onClick={
+                  isWatchLater
+                    ? removeWatchLaterClickHandler
+                    : watchLaterClickHandler
+                }
+              >
+                <span>
+                  <BookmarkIcon />
+                </span>
+                {isWatchLater ? "Remove Watch Later" : "Watch Later"}
+              </div>
             </div>
-            <div className="menu-items">
-              <span>
-                <BookmarkIcon />
-              </span>
-              Watch Later
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

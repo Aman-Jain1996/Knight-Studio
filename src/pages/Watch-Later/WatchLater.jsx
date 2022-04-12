@@ -26,7 +26,11 @@ function WatchLater() {
         ) : (
           <div className="liked-list">
             {state.watchLater.map((later) => (
-              <VideocardHorizontal key={later._id} cardData={later} />
+              <VideocardHorizontal
+                key={later._id}
+                cardData={later}
+                from="later"
+              />
             ))}
           </div>
         )}
