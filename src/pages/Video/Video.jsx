@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
@@ -18,9 +18,17 @@ import {
 export function Video() {
   const { token } = useAuth();
   const { videoId } = useParams();
-  const { state, dispatch, loader, setLoader } = useData();
+  const {
+    state,
+    dispatch,
+    loader,
+    setLoader,
+    setIsPlaylistModalOpen,
+    setModalData,
+  } = useData();
   const [videoDetails, setVideoDetails] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     setLoader(true);
@@ -39,7 +47,7 @@ export function Video() {
     if (token) {
       useLikeVideo(dispatch, videoDetails, token);
     } else {
-      navigate("/login");
+      navigate("/login", { state: { path: location.pathname } });
     }
   };
 
@@ -51,12 +59,21 @@ export function Video() {
     if (token) {
       useWatchLaterVideo(dispatch, videoDetails, token);
     } else {
-      navigate("/login");
+      navigate("/login", { state: { path: location.pathname } });
     }
   };
 
   const removeWatchLaterClickHandler = () => {
     useRemoveWatchLater(dispatch, videoId, token);
+  };
+
+  const playlistClickHandler = () => {
+    if (token) {
+      setIsPlaylistModalOpen(true);
+      setModalData(videoDetails);
+    } else {
+      navigate("/login", { state: { path: location.pathname }, replace: true });
+    }
   };
 
   return (
@@ -117,7 +134,10 @@ export function Video() {
                     </>
                   )}
                 </div>
-                <div className="video-action-items">
+                <div
+                  className="video-action-items"
+                  onClick={playlistClickHandler}
+                >
                   <QueueIcon className="video-action-icon" />
                   <span className="icon-content">Add to Playlist</span>
                 </div>

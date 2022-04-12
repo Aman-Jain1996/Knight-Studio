@@ -34,7 +34,12 @@
 .playlist-content-hover p {
   font-size: 1.6rem;
   color: var(--bg-darkWhite);
-  cursor: default;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
 }
 
 .playlist-card-container:hover .playlist-name {

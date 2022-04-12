@@ -1,0 +1,6 @@
+.playlist-desc-container {
+  display: flex;
+  font-size: 1.2rem;
+  gap: 6px;
+  margin-bottom: 1.2rem;
+}

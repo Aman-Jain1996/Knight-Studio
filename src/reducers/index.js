@@ -48,6 +48,16 @@ export const DataReducer = (state, action) => {
         playlists: action.payload.playlists,
       };
 
+    case actionType.SET_PLAYLIST:
+      return {
+        ...state,
+        playlists: state.playlists.map((play) =>
+          play._id === action.payload.playlistId
+            ? action.payload.playlist
+            : play
+        ),
+      };
+
     case actionType.SET_WATCH_LATER:
       return {
         ...state,

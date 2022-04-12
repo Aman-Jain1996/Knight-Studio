@@ -10,7 +10,12 @@ export function PrivateRoute({ children }) {
 
   useEffect(() => {
     if (!token) {
-      navigate("/login", { state: { path: location.pathname } });
+      if (
+        location.pathname.includes("/explore/") ||
+        location.pathname.includes("/playlists/")
+      )
+        navigate("/login");
+      else navigate("/login", { state: { path: location.pathname } });
       return null;
     }
   }, [token]);

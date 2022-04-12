@@ -14,11 +14,9 @@ export function Homebanner({ imageUrl, heading, content, reversed }) {
       >
         <div className="banner-content-heading">{heading}</div>
         <p className="banner-content-para">{content}</p>
-        <div className="homebanner-button-container">
-          <Link to="/explore" className="homebanner-button-link">
-            Browse Now
-          </Link>
-        </div>
+        <Link to="/explore" className="homebanner-button-link">
+          <div className="homebanner-button-container">Browse Now</div>
+        </Link>
       </div>
       <div className="homebanner-image">
         <img src={imageUrl} alt="banner-image" />

@@ -1,0 +1,94 @@
+.playlist-modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.playlist-modal {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--text-greyDark);
+  min-width: 30rem;
+  z-index: 9999;
+}
+
+.modal-heading-container {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  justify-content: center;
+  border-bottom: 1px solid var(--bg-lightWhite);
+}
+
+.modal-heading {
+  width: 95%;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.close-icon .icon {
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-playlist-list {
+  padding: 2.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+  justify-content: center;
+  border-bottom: 1px solid var(--bg-lightWhite);
+}
+
+.create-playlist-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.create-playlist-container .icon {
+  font-size: 2.6rem;
+}
+
+.add-playlist-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-playlist-item label {
+  flex: 0 0 45%;
+  font-size: 1.2rem;
+}
+
+.add-playlist-item input {
+  width: 100%;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.textarea-field {
+  width: 100%;
+  resize: none;
+  height: 12rem;
+  font-size: 1.2rem;
+  outline: none;
+}

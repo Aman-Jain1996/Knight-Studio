@@ -86,6 +86,59 @@ export const FetchPlaylistsService = async (encodedToken) =>
     },
   });
 
+export const FetchSinglePlaylistService = async (encodedToken, playlistId) =>
+  await axios.get(`/api/user/playlists/${playlistId}`, {
+    headers: {
+      authorization: encodedToken,
+    },
+  });
+
+export const PostPlaylistService = async (encodedToken, title, desc) =>
+  await axios.post(
+    "/api/user/playlists",
+    {
+      playlist: { title, description: desc },
+    },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );
+
+export const DeletePlaylistService = async (encodedToken, playlistId) =>
+  await axios.delete(`/api/user/playlists/${playlistId}`, {
+    headers: {
+      authorization: encodedToken,
+    },
+  });
+
+export const AddVideoToPlaylistService = async (
+  encodedToken,
+  playlistId,
+  video
+) =>
+  await axios.post(
+    `/api/user/playlists/${playlistId}`,
+    { video },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );
+
+export const RemoveVideoFromPlaylistService = async (
+  encodedToken,
+  playlistId,
+  videoId
+) =>
+  await axios.delete(`/api/user/playlists/${playlistId}/${videoId}`, {
+    headers: {
+      authorization: encodedToken,
+    },
+  });
+
 // History services
 
 export const FetchHistoryService = async (encodedToken) =>

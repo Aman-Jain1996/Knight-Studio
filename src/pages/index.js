@@ -8,3 +8,4 @@ export { Playlist } from "./Playlists/Playlist";
 export { Login } from "./Auth/Login";
 export { Signup } from "./Auth/Signup";
 export { Video } from "./Video/Video";
+export { SinglePlaylist } from "./SinglePlaylist/SinglePlaylist";

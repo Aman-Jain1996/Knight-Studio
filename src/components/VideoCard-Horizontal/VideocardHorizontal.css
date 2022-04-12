@@ -25,6 +25,7 @@
 }
 
 .content-title {
+  max-width: 20rem;
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 8px;

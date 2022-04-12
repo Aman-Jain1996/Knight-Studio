@@ -10,4 +10,5 @@ export const actionType = {
   REMOVE_WATCH_LATER: "Remove from Watch Later",
   SEARCH_FILTER_CHANGE: "Search Filter Change",
   CATEGORY_FILTER_CHANGE: "Category Change",
+  SET_PLAYLIST: "Set a Playlist",
 };
